@@ -28,7 +28,7 @@ def start_up_led():
     time.sleep(.25)
     led_color(0,0,1)
     time.sleep(.25)
-    led_color(0,0,0)
+    #led_color(.5,.5,.5)
     print("Init done")
 
 logi_led.logi_led_init()
