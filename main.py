@@ -32,17 +32,18 @@ def start_up_led():
     print("Init done")
 
 logi_led.logi_led_init()
+print(logi_led.led_dll)
 time.sleep(1)
 start_up_led()
 print("Running CPU Monitor LED")
 try:
     while True:
             #update color to current CPU percenage
-            cpu_p = int(psutil.cpu_percent(interval=.3))
+            cpu_p = int(psutil.cpu_percent(interval=.25))
             col = grad[int(cpu_p)]
             print(f"CPU %: {int(cpu_p)} COLOR %: RED: {int(col.red*100)} GREEN: {int(col.green*100)} BLUE: {int(col.blue*100)}")
             led_color(col.red,col.green,col.blue)
-            time.sleep(.3)
+            #time.sleep(.3)
 except Exception as e:
     print(f"ERROR: {e}")
     logi_led.logi_led_shutdown()
