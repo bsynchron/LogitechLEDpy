@@ -1,1 +1,3 @@
-psutil, color, logipy
+psutil
+colour
+logipy
