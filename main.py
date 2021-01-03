@@ -41,7 +41,8 @@ try:
             #update color to current CPU percenage
             cpu_p = int(psutil.cpu_percent(interval=.25))
             col = grad[int(cpu_p)]
-            print(f"CPU %: {int(cpu_p)} COLOR %: RED: {int(col.red*100)} GREEN: {int(col.green*100)} BLUE: {int(col.blue*100)}")
+            sys.stdout.write(f"CPU %: {int(cpu_p)} COLOR %: RED: {int(col.red*100)} GREEN: {int(col.green*100)} BLUE: {int(col.blue*100)}\t\t\r")
+            sys.stdout.flush()
             led_color(col.red,col.green,col.blue)
             #time.sleep(.3)
 except Exception as e:
